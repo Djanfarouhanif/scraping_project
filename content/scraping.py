@@ -37,4 +37,3 @@ def get_data():
         all_link = json.load(f)
     return all_link
 
-print(len(get_data()))

@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from .models import Url_content
 from .scraping import get_data
-from .article_scrap import Article_content
+from .article_scrap import Article_content, run
 
-
+run()
 def add_url_if_not_exists(urls):
     if urls:
         for url in urls:
