@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from .models import Url_content
 from .scraping import get_data
-from .article_scrap import Article_content, run
+from .article_scrap import Article_content
 
-run()
+
 def add_url_if_not_exists(urls):
     if urls:
         for url in urls:
@@ -19,7 +19,10 @@ def add_url_if_not_exists(urls):
 data = get_data()
 add_url_if_not_exists(data)
 all_url = Url_content.objects.all()
-
+urls = []
+for url in all_url:
+    urls.append(url.url)
+Article_content(urls)
 
 def index(request):
     return render(request)
