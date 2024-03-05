@@ -23,11 +23,8 @@ urls = []
 
 for url in all_url:
     urls.append(url.url)
-    
-Article_content(urls)
 
-def index(request):
-    return render(request)
+Article_content(urls)
 
 #==================================================CreateDeContainte===============================================
 
@@ -53,4 +50,6 @@ def Create_article():
 
 Create_article()
 #===============*******************Fin*************************===============================================
-print(len(Article.objects.all()))
+def index(request):
+
+    return render(request)

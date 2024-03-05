@@ -1,0 +1,37 @@
+#container{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: radial-gradient( #070F2B, #040d3d);
+}
+.allArticle-container{
+    width: 60%;
+    margin: 100px auto 100px;
+    box-shadow: 0 0px 10px #070F2B;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #ffffff41;
+    border-radius: 10px;
+    
+
+}
+
+.article-suggestions a{
+    text-decoration: none;
+    color: #d0d0d7;
+    margin: 10px;
+    font-size: 12px;
+}
+.head{
+    width: 100%;
+    text-align: center;
+    color: #070326cf;
+    font-weight: bold;
+
+}
+h4{
+    color: coral;
+}
