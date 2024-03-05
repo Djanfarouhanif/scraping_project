@@ -10,8 +10,11 @@ def get_url_if_not_none(e):
 
 def get_all_url(url):
     if url:   
-        response = requests.get(url)
-        response.encoding = response.apparent_encoding
+        try:
+            response = requests.get(url)
+            response.encoding = response.apparent_encoding
+        except:
+            return None
         data = []
         if response.status_code == 200:
             html = response.text
@@ -32,8 +35,10 @@ def get_all_url(url):
 get_all_url(url)
 
 def get_data():
-    json_root = 'links.json'
-    with open(json_root, "r", encoding='utf-8') as f:
-        all_link = json.load(f)
-    return all_link
-
+    try:
+        json_root = 'links.json'
+        with open(json_root, "r", encoding='utf-8') as f:
+            all_link = json.load(f)
+        return all_link
+    except:
+        return None
