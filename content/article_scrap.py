@@ -1,11 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 import html5lib
-from .scraping import get_url_if_not_none, get_data
+from .scraping import get_url_if_not_none, run
 import json
+from .models import Url_content, Article
 
-data = get_data()
-
+#================Creation des contenu ========================
 def Article_content(data):
     if data:
         data_article = []
@@ -37,9 +37,13 @@ def Article_content(data):
                     
                     var[index]['article_chapo'] = article_shapo
                     var[index]['article_content'] = " ".join(all_paragraphe)
+                    var[index]['link'] = url
                     data_article.append(var[i])
             except:
                 return None
-        with open('content.json', 'w', encoding='utf-16') as f:
-            json.dump(data_article, f, ensure_ascii=False,indent=4 )
+        return data_article
 
+
+
+
+       

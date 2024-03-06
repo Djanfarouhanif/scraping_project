@@ -5,6 +5,7 @@ class Url_content(models.Model):
 
     
 class Article(models.Model):
+    url_content = models.ForeignKey(Url_content, on_delete = models.CASCADE)
     title = models.CharField(max_length=200)
     article_chapo = models.CharField(max_length=300)
     content = models.TextField()

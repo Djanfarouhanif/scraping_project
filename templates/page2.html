@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>generations d'image</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <link rel="stylesheet" href="{% static 'page2.html' %}">
+    <link rel="stylesheet" href="{% static 'page.css' %}">
 </head>
 <body>
     <div id="container">
@@ -14,41 +14,14 @@
             <div class="head"> 
                 <h3>suggestions d'article</h3>
             </div>
+            {% for article in final_suggestions %}
             <div class="article-suggestions">
-                <a href="">
+                <a href="{% url 'post' %}?post_id={{article.id}}">
                     <h4>20/01/2024</h4>
-                    <h2>Lorem ipsum, dolor sit amet 
-                        consectetur adipisicing elit. Nostrum, nisi.</h2>
+                    <h2>{{article.title}}</h2>
                 </a>
             </div>
-            <div class="article-suggestions">
-                <a href="">
-                    <h4>20/01/2024</h4>
-                    <h2>Lorem ipsum, dolor sit amet 
-                        consectetur adipisicing elit. Nostrum, nisi.</h2>
-                </a>
-            </div>
-            <div class="article-suggestions">
-                <a href="">
-                    <h4>20/01/2024</h4>
-                    <h2>Lorem ipsum, dolor sit amet 
-                        consectetur adipisicing elit. Nostrum, nisi.</h2>
-                </a>
-            </div>
-            <div class="article-suggestions">
-                <a href="">
-                    <h4>20/01/2024</h4>
-                    <h2>Lorem ipsum, dolor sit amet 
-                        consectetur adipisicing elit. Nostrum, nisi.</h2>
-                </a>
-            </div>
-            <div class="article-suggestions">
-                <a href="">
-                    <h4>20/01/2024</h4>
-                    <h2>Lorem ipsum, dolor sit amet 
-                        consectetur adipisicing elit. Nostrum, nisi.</h2>
-                </a>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </body>
