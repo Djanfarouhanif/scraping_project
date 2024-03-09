@@ -4,6 +4,7 @@ from .scraping import run
 from .article_scrap import Article_content
 import json
 import random
+import time
 
 #=============fonctions pour ajouter les urls dans la basse de donner===========================
 def add_url_if_not_exists(urls):
@@ -57,6 +58,7 @@ def Create_article():
 Create_article()
 #===============*******************Fin*************************===============================================
 def index(request):
+    time.sleep(600)
     artilcles = Article.objects.all()
    
     all_article = []
